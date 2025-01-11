@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using StarkSDKSpace;
 using TTSDK.UNBridgeLib.LitJson;
+using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] dataObstacle;
 
     private StarkAdManager starkAdManager;
+
+    
 
     //[System.Serializable]
     //public class Level
@@ -154,7 +157,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void LoseScreenPopup()
+    public void LoseScreenPopup()
     {
         if (gameOver)
         {
@@ -171,42 +174,17 @@ public class GameManager : MonoBehaviour
             StartCoroutine("LoseScreenDelay");
         }
     }
-
     IEnumerator LoseScreenDelay()
     {
         yield return new WaitForSeconds(1.5f);
         gameOver = true;
 
-
-        ShowInterstitialAd("e4ikn6jn985kbb05k4",
-            () => {
-
-            },
-            (it, str) => {
-                Debug.LogError("Error->" + str);
-            });
-
     }
 
 
 
 
-    /// <summary>
-    /// ≤•∑≈≤Â∆¡π„∏Ê
-    /// </summary>
-    /// <param name="adId"></param>
-    /// <param name="errorCallBack"></param>
-    /// <param name="closeCallBack"></param>
-    public void ShowInterstitialAd(string adId, System.Action closeCallBack, System.Action<int, string> errorCallBack)
-    {
-        starkAdManager = StarkSDK.API.GetStarkAdManager();
-        if (starkAdManager != null)
-        {
-            var mInterstitialAd = starkAdManager.CreateInterstitialAd(adId, errorCallBack, closeCallBack);
-            mInterstitialAd.Load();
-            mInterstitialAd.Show();
-        }
-    }
+    
 
     void ObstacleSpawn()
     {

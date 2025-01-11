@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private GameObject setting;
     private Animator settingAnim;
-
+    public GameObject loseScreen;
     private void Awake()
     {
         instance = this;
@@ -104,6 +104,7 @@ public class MenuManager : MonoBehaviour
             (bol) => {
                 if (bol)
                 {
+
                     GameManager.instance.levelNo++;
                     GameManager.totalGemAmount += GameManager.instance.currentGemCollected * multiplierValue;
                     if (GameManager.instance.levelNo > GameManager.instance.dataLevels.Count - 1)
@@ -165,10 +166,12 @@ public class MenuManager : MonoBehaviour
             (bol) => {
                 if (bol)
                 {
+                    loseScreen.SetActive(false);
+                    ObstacleHit.Respawned();
 
-                    GameManager.totalGemAmount += GameManager.instance.currentGemCollected;
-                    PlayerPrefs.SetFloat("Total_Gem", GameManager.totalGemAmount);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //GameManager.totalGemAmount += GameManager.instance.currentGemCollected;
+                    //PlayerPrefs.SetFloat("Total_Gem", GameManager.totalGemAmount);
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
