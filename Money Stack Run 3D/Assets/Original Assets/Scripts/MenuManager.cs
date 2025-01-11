@@ -100,7 +100,7 @@ public class MenuManager : MonoBehaviour
 
     public void ContinueGame()
     {
-        ShowVideoAd("192if3b93qo6991ed0",
+        ShowVideoAd("dih3de72fig3d169m2",
             (bol) => {
                 if (bol)
                 {
@@ -161,7 +161,7 @@ public class MenuManager : MonoBehaviour
 
     public void ReviveButton()
     {
-        ShowVideoAd("192if3b93qo6991ed0",
+        ShowVideoAd("dih3de72fig3d169m2",
             (bol) => {
                 if (bol)
                 {
@@ -195,7 +195,7 @@ public class MenuManager : MonoBehaviour
 
     public void SkipButton()
     {
-        ShowVideoAd("192if3b93qo6991ed0",
+        ShowVideoAd("dih3de72fig3d169m2",
             (bol) => {
                 if (bol)
                 {
