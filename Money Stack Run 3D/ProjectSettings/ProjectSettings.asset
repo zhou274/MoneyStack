@@ -711,6 +711,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: DREAMTECK_SPLINES;USE_ADMOB
     Standalone: DREAMTECK_SPLINES
+    WebGL: DREAMTECK_SPLINES
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

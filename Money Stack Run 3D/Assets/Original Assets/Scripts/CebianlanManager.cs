@@ -16,6 +16,9 @@ public class CebianlanManager : MonoBehaviour
     private void Start()
     {
 
+
+
+
         if (!PlayerPrefs.HasKey("FirstStart"))
         {
             // 执行首次启动时的操作
@@ -33,9 +36,6 @@ public class CebianlanManager : MonoBehaviour
             Debug.Log("不是首次启动应用程序");
             CebainlanUI.SetActive(false);
         }
-
-
-
 
 
         clickid = "";
@@ -117,8 +117,11 @@ public class CebianlanManager : MonoBehaviour
         CebainlanUI.SetActive(false);
     }
 
-    public void OkPan()
+    public void OkPan1()
     {
+
+        Debug.Log("=--OkPan--");
+
         CebainlanUI.SetActive(false);
 
         TT.InitSDK((code, env) =>

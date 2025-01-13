@@ -90,7 +90,6 @@ public class ObstacleHit : MonoBehaviour
                 PlayerBlockMovement.instance.playerBlockSpeed = 0;
                 ShowInterstitialAd("e4ikn6jn985kbb05k4",
             () => {
-                Debug.LogError("--插屏广告完成--");
 
             },
             (it, str) => {
