@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     {
         SpeedCalculation();
 
-        LetUsStartTheGame();
+        //LetUsStartTheGame();
 
         WinScreenPopup();
 
@@ -128,9 +128,9 @@ public class GameManager : MonoBehaviour
         currentGemCollected = gemWithStackMoney + gemByCompleteMap + gemByStar + gemWithIncome;
     }
 
-    void LetUsStartTheGame()
+    public void LetUsStartTheGame()
     {
-        if (Input.GetMouseButtonDown(0) && canvas.transform.GetChild(0).gameObject.activeSelf && !EventSystem.current.IsPointerOverGameObject(0))
+        if ( canvas.transform.GetChild(0).gameObject.activeSelf /*&& !EventSystem.current.IsPointerOverGameObject(0)*/)
         {
             Time.timeScale = 1;
             canvas.transform.GetChild(0).gameObject.SetActive(false);
