@@ -100,6 +100,7 @@ public class MenuManager : MonoBehaviour
 
     public void ContinueGame()
     {
+
         ShowVideoAd("dih3de72fig3d169m2",
             (bol) => {
                 if (bol)
